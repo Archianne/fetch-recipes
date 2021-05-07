@@ -11,16 +11,17 @@ const APP_key = "382791db90157c92aaabdea59f48f996";
 //addEventListener
 searchForm.addEventListener("submit", handleRecipeClick);
 
-function handleRecipeClick(e) {
-  e.preventDefault();
+function handleRecipeClick(event) {
+  event.preventDefault();
   foodToSearch = input.value;
+  input.value = "";
   fetchRecipe();
 }
 
 //async function
 async function fetchRecipe() {
-  const baseURL = `https://api.edamam.com/search?q=${foodToSearch}&app_id=${APP_ID}&app_key=${APP_key}&from=0&to=20`;
-  const response = await fetch(baseURL);
+  const requestUrl = `https://api.edamam.com/search?q=${foodToSearch}&app_id=${APP_ID}&app_key=${APP_key}&from=0&to=18`;
+  const response = await fetch(requestUrl);
   const data = await response.json();
   handleFood(data.hits);
 }
@@ -28,7 +29,6 @@ async function fetchRecipe() {
 function handleFood(results) {
   container.classList.remove("initial");
   let foodList = "";
-
   results.map((foodResult) => {
     foodList += `
     <div class="items">
@@ -54,7 +54,7 @@ function handleFood(results) {
     </div>
     `;
   });
-
+  
   //add result to html
   searchResult.innerHTML = foodList;
 }
