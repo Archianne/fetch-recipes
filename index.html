@@ -21,20 +21,37 @@
 </head>
 
   <body>
-    <section id="recipeSection">
+
+<!-- for the second api -->
+    <div class="background-cover"></div> 
+
+    <section id="recipe-section">
       <div class="container">
-        <h1 class="sectionHeading">
+
+        <h1 class="section-heading">
           <span id="h1span">Fetch</span>
           <i class="fas fa-utensils"></i>
           Recipes</h1>
-        <form>
-          <input type="text" placeholder="Search"  id="foodInput">
-          <button id="recipeButton" onclick="handleRecipeClick()">
+
+  <div class="inputs">
+        <input aria-label="food-input" 
+        id="food-input"
+        placeholder="Enter your ingredient"
+        onchange="handleFoodChange()"/>
+        <button id="recipe-button" onclick="handleRecipeClick()">
             <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
-        <div class="searchResult">
+        </button>
+
+        <button id="cocktail-button" onclick="randomCocktail()">
+         <span>Bottoms up? </span><i class="fas fa-cocktail"></i>
+      </button>
+    </div>
+
+      <div class="search-result"></div>
+
+      <div class="cocktail-result"></div>
 
     <script src="./main.js"></script>
+    <script src="./second.js"></script>
   </body>
 </html>
