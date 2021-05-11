@@ -27,7 +27,7 @@ input.addEventListener("keyup", function(event) {
 //async function
 async function fetchRecipe(food) {
   foodToSearch = food;
-  const requestUrl = `https://api.edamam.com/search?q=${foodToSearch}&app_id=${APP_ID}&app_key=${APP_key}&from=0&to=9`;
+  const requestUrl = `https://api.edamam.com/search?q=${foodToSearch}&app_id=${APP_ID}&app_key=${APP_key}&from=0&to=6`;
   const response = await fetch(requestUrl);
   const data = await response.json();
   handleFood(data.hits);
