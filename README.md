@@ -2,7 +2,7 @@
 
 Project done with SoC to practice fetching APIs.
 
-✩ [See Website]([archianne.github.io/fetch-recipes/])
+✩ [See Website]([https://archianne.github.io/fetch-recipes/])
 
 ### Learn:
 - `document.querySelector()`
